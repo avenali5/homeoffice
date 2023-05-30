@@ -6,6 +6,16 @@ import Image from "next/image";
 import arrow from "../../../public/assets/icons/arrow_down.svg";
 import threePeople from "../../../public/assets/images/illustration_three.webp";
 
+import edit from "../../../public/assets/images/characters/edit.webp";
+import skate from "../../../public/assets/images/characters/skate.webp";
+import voz from "../../../public/assets/images/characters/voz.webp";
+import perro from "../../../public/assets/images/characters/perro.webp";
+import siesta from "../../../public/assets/images/characters/siesta.webp";
+import planta from "../../../public/assets/images/characters/planta.webp";
+import alan from "../../../public/assets/images/characters/alan.webp";
+import agus from "../../../public/assets/images/characters/agus.webp";
+import luz from "../../../public/assets/images/characters/luz.webp";
+
 const Hero = ({ setMenu, setSeparatedContactForm }) => {
   return (
     <HeroStyle>
@@ -37,69 +47,39 @@ const Hero = ({ setMenu, setSeparatedContactForm }) => {
           className='illustration-three'
         />
         <div className='characters-container'>
+          <Image src={luz} alt='' className='luz' width={163} height={417} />
           <Image
-            src='/assets/images/characters/luz.PNG'
-            alt=''
-            className='luz'
-            width={163}
-            height={417}
-          />
-          <Image
-            src={"/assets/images/characters/skate.PNG"}
+            src={skate}
             alt=''
             className='skate'
             width={391}
             height={399}
           />
+          <Image src={voz} alt='' className='voz' width={290} height={414} />
+          <Image src={edit} alt='' className='edit' width={331} height={343} />
           <Image
-            src={"/assets/images/characters/voz.PNG"}
-            alt=''
-            className='voz'
-            width={290}
-            height={414}
-          />
-          <Image
-            src={"/assets/images/characters/edit.PNG"}
-            alt=''
-            className='edit'
-            width={331}
-            height={343}
-          />
-          <Image
-            src={"/assets/images/characters/perro.PNG"}
+            src={perro}
             alt=''
             className='perro'
             width={430}
             height={404}
           />
           <Image
-            src={"/assets/images/characters/siesta.PNG"}
+            src={siesta}
             alt=''
             className='siesta'
             width={394}
             height={186}
           />
           <Image
-            src={"/assets/images/characters/planta.PNG"}
+            src={planta}
             alt=''
             className='planta'
             width={187}
             height={393}
           />
-          <Image
-            src={"/assets/images/characters/alan.PNG"}
-            alt=''
-            className='alan'
-            width={287}
-            height={394}
-          />
-          <Image
-            src={"/assets/images/characters/agus.PNG"}
-            alt=''
-            className='agus'
-            width={205}
-            height={432}
-          />
+          <Image src={alan} alt='' className='alan' width={287} height={394} />
+          <Image src={agus} alt='' className='agus' width={205} height={432} />
         </div>
       </div>
     </HeroStyle>
