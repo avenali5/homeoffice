@@ -1,26 +1,46 @@
-html,
-body {
-  padding: 0;
+@font-face {
+  font-family: "Aeonik-regular";
+  src: url("../public/assets/fonts/Aeonik/Aeonik-Regular.otf");
+}
+@font-face {
+  font-family: "Aeonik-bold";
+  src: url("../public/assets/fonts/Aeonik/Aeonik-Bold.otf");
+}
+@font-face {
+  font-family: "Aeonik-black";
+  src: url("../public/assets/fonts/Aeonik/Aeonik-Black.otf");
+}
+@font-face {
+  font-family: "DM-Serif";
+  src: url("../public/assets/fonts/DM_Serif/DMSerifText-Italic.ttf");
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Aeonik-regular";
+  letter-spacing: .5px;
+}
+html, body{
+  width:100%;
+  height:100%;
+  position: relative;
+}
+body{
+  background: #8E87E6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+  color:unset
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@keyframes float {
+  0%, 100%{
+    transform: translate(-50%, -1rem);
   }
-  body {
-    color: white;
-    background: black;
+  50%{
+transform: translate(-50%, 0rem);
   }
 }
