@@ -95,7 +95,6 @@ export const HeroStyle = styled.section`
         height: 27rem;
         img {
           position: absolute;
-          transform: scale(0.6);
           transform-origin: bottom left;
           transition: 0.3s all;
           &.edit {
