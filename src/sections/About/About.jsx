@@ -73,9 +73,8 @@ const About = () => {
               ? "Fundé Home Office para poder trabajar con amigos y personas que admiro. Una cosa llevó a la otra y, cuando me quise acordar, éramos muchas personas haciendo lo que nos gusta para nuestra comunidad y clientes."
               : slideActive === 2
               ? "Llegué a Home Office siendo una fiel oyente y hoy soy parte del equipo que desarrolla ideas y busca la manera de contar una historia, para que resuene en los oídos de las personas."
-              : "Soy un curioso insaciable y apasionado de aprovechar los recursos del audio para narrar el mundo. Feliz de compartir este proyecto con gente talentosa y poder potenciar los mensajes de quienes nos convocan."}
+              : "Soy un curioso insaciable y apasionado de aprovechar los recursos del audio para narrar el mundo. Feliz de compartir este proyecto con gente talentosa y poder potenciar los mensajes de quienes quieran trabajar con nosotros."}
           </p>
-          {/* <Image src={bubblePoint} alt='' /> */}
           <BubblePoint
             color={bubbleColor}
             pointPosition={pointPosition}
@@ -128,10 +127,7 @@ const About = () => {
             }}
           >
             {cards.map(card => (
-              <SwiperSlide
-                key={card.index}
-                // onMouseEnter={() => handleMouseOver(card)}
-              >
+              <SwiperSlide key={card.index}>
                 <Card
                   setSlideActive={setSlideActive}
                   setBubbleColor={setBubbleColor}

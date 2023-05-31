@@ -42,7 +42,6 @@ export const FooterStyle = styled.footer`
       display: flex;
       flex-direction: column;
 
-      // gap: 0.5rem;
       .column {
         display: flex;
         flex-direction: column;
@@ -63,7 +62,6 @@ export const FooterStyle = styled.footer`
       }
     }
     .right {
-      // width: 50%;
       .platforms {
         flex-direction: row;
         gap: 3rem;

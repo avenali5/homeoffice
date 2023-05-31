@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import { Constants } from "../../../styles/constants";
 
-export const HeroStyle = styled.section`
+export const HeroStyle = styled.section.attrs({ className: "hero-wrapper" })`
   border-radius: 12px;
   padding-top: 3.5rem;
   padding-bottom: 10rem;
-  // overflow: hidden;
   position: relative;
   margin: 1rem;
-  // max-width: 65rem;
+  transition: 0.1s all;
   .header {
     z-index: 0;
     top: 0;
@@ -23,6 +22,9 @@ export const HeroStyle = styled.section`
       border-radius: 12px;
     }
   }
+  .wrapper {
+    transition: 0.1s all;
+  }
   .hero {
     background: ${Constants.yellow};
     border-radius: 12px;
@@ -33,13 +35,12 @@ export const HeroStyle = styled.section`
     z-index: 2;
     position: relative;
     padding-top: 4rem;
-    left: 50%;
-    transform: translateX(-50%) !important;
     h1 {
       font-family: "Aeonik-black";
       color: ${Constants.hardPurple};
       font-size: 2rem;
       padding: 0 1rem;
+      transition: 0.1s all;
       span {
         font-family: "DM-Serif";
         font-weight: bold;
@@ -64,6 +65,11 @@ export const HeroStyle = styled.section`
       display: none;
     }
   }
+  @media (min-width: 600px) {
+    br {
+      display: none;
+    }
+  }
   @media (min-width: 700px) {
     .hero {
       h1 {
@@ -84,7 +90,6 @@ export const HeroStyle = styled.section`
       h1 {
         max-width: 40rem;
         margin: 0 auto;
-        // display: flex;
       }
       .illustration-three {
         display: none;

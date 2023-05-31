@@ -29,7 +29,6 @@ html, body{
 body{
   background: #8E87E6;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 a{
   text-decoration: none;

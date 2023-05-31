@@ -67,7 +67,6 @@ export const ContactStyle = styled.div`
     }
     img {
       border-radius: 200px;
-      // border: 1px solid black;
       box-shadow: 2px 2px 0 black;
     }
     button {

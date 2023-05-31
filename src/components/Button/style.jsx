@@ -18,7 +18,6 @@ export const ButtonStyle = styled.button`
   letter-spacing: 1px;
   transition: 0.2s all;
   &:hover {
-    // transform: translateY(-0.2rem);
     transform: rotate(2deg);
   }
 `;

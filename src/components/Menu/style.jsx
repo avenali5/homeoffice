@@ -8,6 +8,12 @@ export const MenuStyle = styled.div`
   height: 100vh;
   width: 100vw;
   background: white;
+  .close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    height: 2rem;
+  }
   nav {
     display: flex;
     flex-direction: column;
@@ -17,6 +23,9 @@ export const MenuStyle = styled.div`
     a,
     span {
       font-size: 2rem;
+    }
+    svg {
+      display: none;
     }
   }
   @media (min-width: 900px) {

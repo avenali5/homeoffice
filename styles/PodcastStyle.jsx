@@ -3,19 +3,18 @@ import { Constants } from "./constants";
 
 export const PodcastStyle = styled.div`
   background: ${Constants.white};
-  .transition{
+  .transition {
     height: 100vh;
     width: 100vw;
-    position:fixed;
-    top:0;
-    left:0;
+    position: fixed;
+    top: 0;
+    left: 0;
     background: white;
     z-index: 1000;
-    transition: .3s all;
-    animation: fadeOut .6s forwards;
+    transition: 0.3s all;
+    animation: fadeOut 0.6s forwards;
   }
   .wave {
-    // display: none;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -23,8 +22,8 @@ export const PodcastStyle = styled.div`
     transform: translateY(6rem);
     z-index: 0;
   }
-  .page-wrapper{
-    position:relative;
+  .page-wrapper {
+    position: relative;
     z-index: 1;
   }
   .title {
@@ -47,7 +46,6 @@ export const PodcastStyle = styled.div`
       line-height: 90%;
     }
     > span {
-      // line-height: 10% !important;
       font-size: 2.8rem;
       opacity: 0.7;
       font-weight: bold;
@@ -82,7 +80,6 @@ export const PodcastStyle = styled.div`
         margin-bottom: 1rem;
       }
       b {
-        // cursor: pointer;
       }
     }
   }
@@ -94,6 +91,9 @@ export const PodcastStyle = styled.div`
   }
   .swiper {
     margin: 5rem 0 4rem;
+    .arrow {
+      display: none;
+    }
     .swiper-slide {
       a {
         display: block;
@@ -186,32 +186,33 @@ export const PodcastStyle = styled.div`
       .description {
         p {
           font-size: 0.9rem;
-          b{
-            cursor:pointer;
+          b {
+            cursor: pointer;
           }
         }
       }
       > .buttons-container {
         display: none;
       }
-      .swiper{
+      .swiper {
         padding: 1rem 4rem;
         max-width: 1200px;
-        .swiper-slide{
-            transition: .3s all;
-            &:hover{
-              transform:translateY(-.4rem)
-            }
+        .swiper-slide {
+          transition: 0.3s all;
+          &:hover {
+            transform: translateY(-0.4rem);
           }
+        }
         .arrow {
-          &.swiper-button-next{
-            padding-right: 1rem
+          display: block;
+          &.swiper-button-next {
+            padding-right: 3rem;
           }
-          &.swiper-button-prev{
-            padding-left: 1rem
+          &.swiper-button-prev {
+            padding-left: 0rem;
           }
           &:after {
-            display:none; !important;
+            display: none !important;
           }
         }
       }
@@ -239,9 +240,9 @@ export const PodcastStyle = styled.div`
   }
 
   @keyframes fadeOut {
-    to{
+    to {
       opacity: 0;
-      pointer-events:none;
+      pointer-events: none;
     }
   }
 `;

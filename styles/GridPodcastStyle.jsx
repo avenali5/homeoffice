@@ -13,6 +13,14 @@ export const GridPodcastStyle = styled.main`
     text-align: center;
     color: ${Constants.hardPurple};
   }
+  .wave {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(6rem);
+    z-index: 0;
+  }
   .grid {
     padding: 4rem 0;
     display: flex;
@@ -22,6 +30,8 @@ export const GridPodcastStyle = styled.main`
     max-width: 1200px;
     margin: 0 auto;
     gap: 2rem;
+    position: relative;
+    z-index: 1;
     .card {
       width: 100%;
       max-width: 254px;
@@ -31,6 +41,7 @@ export const GridPodcastStyle = styled.main`
       box-shadow: ${Constants.boxShadow};
       border: 1px solid black;
       border-radius: 5px;
+      background: ${Constants.white};
       > img {
         width: 100%;
         height: 100%;

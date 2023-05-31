@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { HeroStyle } from "./style";
 import { Typewriter } from "react-simple-typewriter";
 import Header from "../Header/Header";
@@ -26,24 +26,31 @@ const Hero = ({ setMenu, setSeparatedContactForm }) => {
         />
       </div>
       <div className='hero'>
-        <h1>
-          HACEMOS HOME OFFICE PARA COMPARTIR{" "}
-          <span>
-            <Typewriter
-              words={["IDEAS", "CONOCIMIENTOS", "CURIOSIDADES", "INQUIETUDES"]}
-              loop={5}
-              cursor
-              cursorStyle='|'
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1500}
-            />
-          </span>
-        </h1>
+        <div className='wrapper'>
+          <h1>
+            HACEMOS HOME OFFICE PARA COMPARTIR <br />
+            <span>
+              <Typewriter
+                words={[
+                  "IDEAS",
+                  "CONOCIMIENTOS",
+                  "CURIOSIDADES",
+                  "INQUIETUDES",
+                ]}
+                loop={5}
+                cursor
+                cursorStyle='|'
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1500}
+              />
+            </span>
+          </h1>
+        </div>
         <Image src={arrow} alt='Scrolleá' className='arrow' />
         <Image
           src={threePeople}
-          alt='Hom eoffice'
+          alt='Home office'
           className='illustration-three'
         />
         <div className='characters-container'>

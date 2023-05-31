@@ -30,7 +30,6 @@ const Podcasts = () => {
           1100: {
             slidesPerView: 3.4,
             centeredSlides: false,
-            // navigation: true,
           },
           1201: {
             slidesPerView: 4,
