@@ -8,6 +8,11 @@ export const MenuStyle = styled.div`
   height: 100vh;
   width: 100vw;
   background: white;
+  transform: translateX(-100%);
+  transition: 0.5s all;
+  &.open {
+    transform: translateX(0);
+  }
   .close {
     position: absolute;
     top: 2rem;

@@ -21,6 +21,12 @@ const Slider = ({
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   };
+
+  const handlePodcastClick = () => {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loading");
+  };
+
   return (
     <Swiper
       modules={[Navigation]}
@@ -40,6 +46,7 @@ const Slider = ({
               query: { ...podcast },
             }}
             as={`/${podcast.slug}`}
+            onClick={handlePodcastClick}
           >
             <Image
               src={podcast.img}
