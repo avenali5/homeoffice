@@ -7,6 +7,10 @@ import Link from "next/link";
 import Nav from "../../components/Nav/Nav";
 
 const Header = ({ setMenu, lineBackground, setSeparatedContactForm }) => {
+  const handleMenu = () => {
+    const menu = document.querySelector(".menu-wrapper");
+    menu.classList.add("open");
+  };
   return (
     <HeaderStyle>
       <div className='navigator'>
@@ -21,9 +25,7 @@ const Header = ({ setMenu, lineBackground, setSeparatedContactForm }) => {
           src={menuIcon}
           alt='Menu'
           className='menu-icon'
-          onClick={() => {
-            setMenu(true);
-          }}
+          onClick={handleMenu}
         />
       </div>
     </HeaderStyle>

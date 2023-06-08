@@ -15,6 +15,7 @@ import curlyArrow from "../public/assets/icons/curly_arrow.svg";
 import Slider from "../src/sections/Podcasts/Slider";
 import { useRouter } from "next/router";
 import Menu from "../src/components/Menu/Menu";
+import Loader from "../src/components/Loader/Loader";
 
 const Show = ({ podcast }) => {
   const [totalDescription, setTotalDescription] = useState(false);
@@ -33,7 +34,8 @@ const Show = ({ podcast }) => {
         <link rel='icon' href='/favicon.png' />
       </Head>
       <div className='transition' />
-      {menu && <Menu setMenu={setMenu} />}
+      <Loader />
+      <Menu setMenu={setMenu} />
 
       <Header lineBackground={podcast.accentColor} setMenu={setMenu} />
       <div className='page-wrapper'>

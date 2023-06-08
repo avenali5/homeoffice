@@ -22,7 +22,7 @@ const Podcasts = () => {
         <meta name='description' content='La casa de los podcasts' />
         <link rel='icon' href='/favicon.png' />
       </Head>
-      {menu && <Menu setMenu={setMenu} />}
+      <Menu setMenu={setMenu} />
 
       <Header setMenu={setMenu} />
       <h2>NUESTROS PODCASTS</h2>

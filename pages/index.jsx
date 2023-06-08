@@ -8,6 +8,7 @@ import Footer from "../src/sections/Footer/Footer";
 import Menu from "../src/components/Menu/Menu";
 import { useState } from "react";
 import ContactForm from "../src/components/ContactForm/ContactForm";
+import Loader from "../src/components/Loader/Loader";
 
 export default function Home() {
   const [menu, setMenu] = useState(false);
@@ -20,7 +21,8 @@ export default function Home() {
         <meta name='description' content='La casa de los podcasts' />
         <link rel='icon' href='/favicon.png' />
       </Head>
-      {menu && <Menu setMenu={setMenu} />}
+      <Loader />
+      <Menu setMenu={setMenu} />
       <Hero
         setMenu={setMenu}
         setSeparatedContactForm={setSeparatedContactForm}
