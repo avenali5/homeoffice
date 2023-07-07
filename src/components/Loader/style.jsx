@@ -7,7 +7,7 @@ export const LoaderStyle = styled.div`
   width: 0;
   background: ${Constants.black};
   top: 0;
-  z-index: 100;
+  z-index: 1001;
   &.loading {
     animation: load 1.5s forwards;
   }

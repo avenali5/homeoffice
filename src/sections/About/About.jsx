@@ -20,6 +20,7 @@ const About = () => {
     {
       name: "Alan",
       ig: "@paramisinsal",
+      igLink: "https://www.instagram.com/paramisinsal/",
       img: "/assets/images/alan.webp",
       index: 1,
       backgroundColor: `${Constants.softPurple}`,
@@ -29,6 +30,7 @@ const About = () => {
     {
       name: "Luz",
       ig: "@luzbottani",
+      igLink: "https://www.instagram.com/luzbottani/",
       img: "/assets/images/luz.webp",
       index: 2,
       backgroundColor: `${Constants.hardYellow}`,
@@ -38,6 +40,7 @@ const About = () => {
     {
       name: "Agustín",
       ig: "@agustin_avenali",
+      igLink: "https://www.instagram.com/agustin_avenali/",
       img: "/assets/images/agustin.webp",
       index: 3,
       backgroundColor: `${Constants.pink}`,
@@ -65,16 +68,23 @@ const About = () => {
   return (
     <AboutStyle>
       <Image src={greyWave} alt='' className='wave' />
-      <div className='about-wrapper' id='nosotros'>
+      <div className='about-wrapper centered-section' id='nosotros'>
         <h2>NOSOTROS</h2>
         <div className='bubble' style={{ background: bubbleColor }}>
-          <p style={{ color: fontColor }}>
-            {slideActive === 1
-              ? "Fundé Home Office para poder trabajar con amigos y personas que admiro. Una cosa llevó a la otra y, cuando me quise acordar, éramos muchas personas haciendo lo que nos gusta para nuestra comunidad y clientes."
-              : slideActive === 2
-              ? "Llegué a Home Office siendo una fiel oyente y hoy soy parte del equipo que desarrolla ideas y busca la manera de contar una historia, para que resuene en los oídos de las personas."
-              : "Soy un curioso insaciable y apasionado de aprovechar los recursos del audio para narrar el mundo. Feliz de compartir este proyecto con gente talentosa y poder potenciar los mensajes de quienes quieran trabajar con nosotros."}
-          </p>
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                slideActive === 1
+                  ? "Home Office nació de mis ganas de trabajar con amigos y personas que admiro. Una cosa llevó a la otra y, cuando me quise acordar, éramos muchas personas haciendo lo que nos gusta para nuestra comunidad y clientes."
+                  : slideActive === 2
+                  ? "Llegué a Home Office siendo una fiel oyente y hoy soy parte del equipo que desarrolla ideas y busca la manera de contar una historia para que resuene en los oídos de las personas. "
+                  : "Soy un curioso insaciable y apasionado de aprovechar los recursos del audio para narrar el mundo. Feliz de compartir este proyecto con gente talentosa y poder potenciar los mensajes de quienes quieran trabajar con nosotros.",
+            }}
+            style={{
+              color: fontColor,
+              margin: slideActive === 2 ? ".67rem 0" : "",
+            }}
+          ></p>
           <BubblePoint
             color={bubbleColor}
             pointPosition={pointPosition}
@@ -92,7 +102,13 @@ const About = () => {
                 <div className='info'>
                   <h3>{card.name}</h3>
                   <p>
-                    <a href=''>{card.ig}</a>
+                    <a
+                      href={card.igLink}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {card.ig}
+                    </a>
                   </p>
                   <Image
                     src={card.img}

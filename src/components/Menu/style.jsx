@@ -16,7 +16,7 @@ export const MenuStyle = styled.div`
   .close {
     position: absolute;
     top: 2rem;
-    right: 2rem;
+    right: 1rem;
     height: 2rem;
   }
   nav {
@@ -28,6 +28,11 @@ export const MenuStyle = styled.div`
     a,
     span {
       font-size: 2rem;
+      cursor: unset !important;
+      &:visited {
+        text-decoration: none;
+        color: unset;
+      }
     }
     svg {
       display: none;

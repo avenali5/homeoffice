@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { podcasts as podcastList } from "../src/utils/podcasts";
 import Image from "next/image";
 import Header from "../src/sections/Header/Header";
@@ -12,6 +12,21 @@ import Menu from "../src/components/Menu/Menu";
 
 const Podcasts = () => {
   const [menu, setMenu] = useState(false);
+  const [scrollHeight, setScrollHeight] = useState(0);
+
+  useEffect(() => {
+    const header = document.querySelector(".header");
+    window.onscroll = () => {
+      setScrollHeight(window.scrollY);
+      if (scrollHeight >= 150) {
+        header.classList.add("slideDown");
+        header.classList.remove("slideUp");
+      } else {
+        header.classList.add("slideUp");
+        header.classList.remove("slideDown");
+      }
+    };
+  }, [scrollHeight]);
 
   return (
     <GridPodcastStyle>
@@ -24,6 +39,7 @@ const Podcasts = () => {
       </Head>
       <Menu setMenu={setMenu} />
 
+      <Header setMenu={setMenu} fixed />
       <Header setMenu={setMenu} />
       <h2>NUESTROS PODCASTS</h2>
       <div className='grid'>

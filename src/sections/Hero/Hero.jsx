@@ -47,7 +47,6 @@ const Hero = ({ setMenu, setSeparatedContactForm }) => {
             </span>
           </h1>
         </div>
-        <Image src={arrow} alt='Scrolleá' className='arrow' />
         <Image
           src={threePeople}
           alt='Home office'

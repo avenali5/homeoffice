@@ -6,6 +6,9 @@ export const AboutStyle = styled.section`
   background: ${Constants.white};
   position: relative;
   z-index: 1;
+  .about-wrapper {
+    scroll-margin-top: 10vh;
+  }
   .wave {
     width: 100vw;
     height: auto;

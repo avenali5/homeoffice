@@ -14,32 +14,35 @@
   font-family: "DM-Serif";
   src: url("../public/assets/fonts/DM_Serif/DMSerifText-Italic.ttf");
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Aeonik-regular";
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
+  scroll-behavior: smooth;
 }
-html, body{
-  width:100%;
-  height:100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
   position: relative;
 }
-body{
-  background: #8E87E6;
+body {
+  background: #8e87e6;
   overflow-x: hidden;
 }
-a{
+a {
   text-decoration: none;
-  color:unset
+  color: unset;
 }
 
 @keyframes float {
-  0%, 100%{
+  0%,
+  100% {
     transform: translate(-50%, -1rem);
   }
-  50%{
-transform: translate(-50%, 0rem);
+  50% {
+    transform: translate(-50%, 0rem);
   }
 }

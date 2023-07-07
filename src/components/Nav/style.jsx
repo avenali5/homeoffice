@@ -35,6 +35,12 @@ export const NavStyle = styled.nav`
       }
     }
 
+    &.home {
+      svg {
+        top: 0.4rem;
+        transform: translate(-50%, 100%);
+      }
+    }
     &.podcasts {
       svg {
         top: 0.4rem;
@@ -49,11 +55,8 @@ export const NavStyle = styled.nav`
     }
     &.about {
       svg {
-        top: 0;
-        transform: translate(-50%, -100%);
-        path {
-          transition: 3s all;
-        }
+        top: 0.4rem;
+        transform: translate(-50%, 100%);
       }
     }
     &.contact {

@@ -18,11 +18,23 @@ import Menu from "../src/components/Menu/Menu";
 import Loader from "../src/components/Loader/Loader";
 
 const Show = ({ podcast }) => {
-  const [totalDescription, setTotalDescription] = useState(false);
   const [colaborate, setColaborate] = useState(false);
   const [menu, setMenu] = useState(false);
+  const [scrollHeight, setScrollHeight] = useState(0);
 
-  const { query } = useRouter();
+  useEffect(() => {
+    const header = document.querySelector(".header");
+    window.onscroll = () => {
+      setScrollHeight(window.scrollY);
+    };
+    if (scrollHeight >= 150) {
+      header.classList.add("slideDown");
+      header.classList.remove("slideUp");
+    } else {
+      header.classList.add("slideUp");
+      header.classList.remove("slideDown");
+    }
+  }, [scrollHeight]);
 
   return (
     <PodcastStyle>
@@ -37,6 +49,7 @@ const Show = ({ podcast }) => {
       <Loader />
       <Menu setMenu={setMenu} />
 
+      <Header lineBackground={podcast.accentColor} setMenu={setMenu} fixed />
       <Header lineBackground={podcast.accentColor} setMenu={setMenu} />
       <div className='page-wrapper'>
         <div className='top'>
@@ -106,15 +119,7 @@ const Show = ({ podcast }) => {
             />
             <div className='description'>
               <h3>Acerca de</h3>
-              <p>
-                {!totalDescription
-                  ? `${podcast.description.slice(0, 200)}...`
-                  : podcast.description.slice(0, podcast.description.length)}
-                <b onClick={() => setTotalDescription(!totalDescription)}>
-                  {" "}
-                  Ver {totalDescription ? "menos" : "más"}
-                </b>
-              </p>
+              <p>{podcast.description}</p>
             </div>
           </div>
         </div>

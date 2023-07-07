@@ -18,6 +18,8 @@ export const FooterStyle = styled.footer`
       height: auto;
       margin-bottom: 1rem;
     }
+  }
+  .right {
     .find-us {
       h4 {
         margin-bottom: 0.5rem;
@@ -34,20 +36,6 @@ export const FooterStyle = styled.footer`
       }
     }
   }
-  .right {
-    h4 {
-      margin-bottom: 0.5rem;
-    }
-    .platforms {
-      display: flex;
-      flex-direction: column;
-
-      .column {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
   @media (min-width: 768px) {
     .footer-wrapper {
       flex-direction: row;
@@ -59,14 +47,6 @@ export const FooterStyle = styled.footer`
       width: 50%;
       .logo {
         margin-bottom: 3rem;
-      }
-    }
-    .right {
-      .platforms {
-        flex-direction: row;
-        gap: 3rem;
-        .column {
-        }
       }
     }
   }

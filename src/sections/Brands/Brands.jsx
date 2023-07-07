@@ -45,39 +45,42 @@ const Brands = () => {
   ];
   return (
     <BrandsStyle>
-      <h2>¿TENÉS UNA HISTORIA QUE CONTAR?</h2>
-      <p>
-        Somos una productora boutique, especializada en cuidar, desarrollar y
-        potenciar tus ideas. Te vamos a acompañar a preproducir, producir y
-        distribuir tu podcast. Las puertas están&nbsp;abiertas.{" "}
-        <b>Pasá y dejá tus consultas</b>
-      </p>
-      <Swiper
-        modules={[Autoplay]}
-        loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: true,
-        }}
-        slidesPerView={3}
-      >
-        {brands.map((brand, i) => (
-          <SwiperSlide key={i}>
-            <Image src={brand.img} alt={brand.alt} width={448} height={129} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <div className='button-container'>
-        <Button
-          type='primary'
-          backgroundColor={Constants.hardPurple}
-          fontColor={Constants.white}
-          fullWidth
-          onClick={() => setContact(true)}
+      <div className='wrapper'>
+        <div className='text'>
+          <h2>¿TENÉS UNA HISTORIA QUE CONTAR?</h2>
+          <p>
+            Somos una productora boutique, especializada en cuidar, desarrollar
+            y potenciar tus ideas. Te vamos a acompañar a preproducir, producir
+            y distribuir tu podcast. Las puertas están&nbsp;abiertas.{" "}
+            <b>Pasá y dejá tus consultas.</b>
+          </p>
+          <div className='button-container'>
+            <Button
+              type='primary'
+              backgroundColor={Constants.hardPurple}
+              fontColor={Constants.white}
+              fullWidth
+              onClick={() => setContact(true)}
+            >
+              <Image src={planeIcon} alt='Contactanos' />
+              Contactanos
+            </Button>
+          </div>
+        </div>
+        <Swiper
+          modules={[Autoplay]}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+          }}
+          slidesPerView={3}
         >
-          <Image src={planeIcon} alt='Contactanos' />
-          Contactanos
-        </Button>
+          {brands.map((brand, i) => (
+            <SwiperSlide key={i}>
+              <Image src={brand.img} alt={brand.alt} width={448} height={129} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
       {contact && (
         <ContactForm

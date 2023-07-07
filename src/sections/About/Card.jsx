@@ -16,7 +16,9 @@ const Card = ({ info, setSlideActive, setBubbleColor, setFontColor }) => {
     <div className='info'>
       <h3>{info.name}</h3>
       <p>
-        <a href=''>{info.ig}</a>
+        <a href={info.igLink} target='_blank' rel='noopener noreferrer'>
+          {info.ig}
+        </a>
       </p>
       <Image src={info.img} alt={info.name} width={300} height={300} />
     </div>

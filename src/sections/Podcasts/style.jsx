@@ -9,13 +9,15 @@ export const PodcastsStyle = styled.section`
     margin: 0 auto;
     h2 {
       padding: 1rem;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: ${Constants.white};
+      text-align: center;
+      font-family: "Aeonik-Black";
     }
   }
   .swiper {
     max-width: 80rem;
-    margin: 87px auto 64px;
+    margin: 40px auto 64px;
     padding-bottom: 0.3rem;
     .swiper-slide {
       a {
