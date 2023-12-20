@@ -1,6 +1,5 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import { podcasts as podcastList } from "../src/utils/podcasts";
 import Image from "next/image";
 import Header from "../src/sections/Header/Header";
 import Footer from "../src/sections/Footer/Footer";
@@ -9,10 +8,30 @@ import arrow from "../public/assets/icons/arrow_down_long.svg";
 import { GridPodcastStyle } from "../styles/GridPodcastStyle";
 import greyWave from "../public/assets/images/grey_wave.svg";
 import Menu from "../src/components/Menu/Menu";
+import { getPodcasts } from "../src/utils/getPodcasts";
+import GridLoader from "../src/components/GridLoader/GridLoader";
 
 const Podcasts = () => {
   const [menu, setMenu] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(0);
+  const [pods, setPods] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const handlePods = async () => {
+    setLoading(true);
+    try {
+      const podcastsList = await getPodcasts();
+      setLoading(false);
+      setPods(podcastsList);
+    } catch (error) {
+      setLoading(false);
+      console.error("Error in fetchDataFromSheet:", error);
+    }
+  };
+
+  useEffect(() => {
+    handlePods();
+  }, []);
 
   useEffect(() => {
     const header = document.querySelector(".header");
@@ -43,7 +62,8 @@ const Podcasts = () => {
       <Header setMenu={setMenu} />
       <h2>NUESTROS PODCASTS</h2>
       <div className='grid'>
-        {podcastList.map(podcast => (
+        {loading && <GridLoader />}
+        {pods?.map(podcast => (
           <div className='card' key={podcast.id}>
             <Image
               src={podcast.img}

@@ -21,7 +21,8 @@ export const GridPodcastStyle = styled.main`
     transform: translateY(6rem);
     z-index: 0;
   }
-  .grid {
+  .grid,
+  .grid-loader {
     padding: 4rem 0;
     display: flex;
     flex-wrap: wrap;
